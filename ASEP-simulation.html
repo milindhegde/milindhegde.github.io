@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="html" lang="en-US"><head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <title>Milind Hegde - Research</title>
+ 
+  <link rel="stylesheet" type="text/css" href="css/index.css" id="pagesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="//fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto+Slab:300" rel="stylesheet" type="text/css">
+  
+  <script src="google.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GXEYQR0FX"></script>
+   <script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+		SVG: {
+			scale: 85
+		},
+		
+		NativeMML: {
+			scale: 85
+		},
+		
+		"HTML-CSS": {
+			scale: 85
+		}
+    });
+</script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-poisson@umd/browser.js"></script>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-poisson@umd/browser.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@umd/browser.js"></script>
+
+  <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
+
+
+
+  <style>
+	li
+	{
+		margin-bottom: 14px;
+		line-height: 30px;
+	}
+
+	ol li
+	{
+		text-indent: -1.6em;
+	}
+
+	ol.start 
+	{ 
+    counter-reset: mycounter; 
+	}
+
+	ol.start li, ol.continue li 
+	{
+	    list-style: none;
+	}
+	
+	ol.start li:before, ol.continue li:before
+	{ 
+	    content: counter(mycounter) "."; 
+	    counter-increment: mycounter;
+	    
+	    text-align: left;
+	    width:20px;
+	    display:block;
+	    float:left;
+	    left:-60px;
+	}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9QP3WD2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="page">
+   <nav class="MenuBar grpelem" id="menuu72">
+	
+	<div class="MenuContainer">
+		<div class="MenuItem">
+			<a href="index.html">Home</a>
+		</div>
+		<!--<div class="MenuItem">
+			<a href="http://milindhegde.github.io/CV/CV.pdf" target="_blank">CV</a>
+		</div>-->
+		<div class="MenuItem">
+			<a href="research.html" class="selected">Research</a>
+		</div>
+		<div class="MenuItem">
+			<a href="teaching.html">Teaching</a>
+		</div>
+		<div class="MenuItem">
+			<a href="seminar.html">Seminar</a>
+		</div>
+<!-- 		<div class="MenuItem">
+			<a href="book_reviews.html">Miscellaneous</a>
+		</div> -->
+		<!--<div class="MenuItem">
+			<a href="projects.html">Older Projects</a>
+		</div>-->
+		<!--<div class="MenuItem">
+			<a href="misc.html">Other Math</a>
+		</div>-->
+	</div>
+   </nav>
+	
+	   
+	<div id="white-bg"></div>
+	<div id="content" style="top:0px; margin-top:2cm; padding-left:50px; padding-right:0px; width:740px">
+		<p style="width:700px">The following is a simulation of the <a href="papers/colored_ASEP_S6V_scaling_limit.pdf" target="_blank">ASEP sheet</a>, and therefore also (approximately) of the Airy sheet. For larger scale simulations or of the ASEP landscape, run the <a href="ASEP_simulation.zip">Julia code</a> on your computer.
+		</p>
+
+		<form onsubmit="ASEP_sheet(Number(document.getElementById('alpha').value), Number(document.getElementById('q').value), Number(document.getElementById('the_range').value), Number(document.getElementById('t').value)); return false;">
+		<table style="margin-left:auto; margin-right: auto;">
+ 		 <tr>
+ 		 	<td>\(\alpha \in (-1,1)\):</td>
+			<td style="padding-left: 15px;"><input type="text" id="alpha" size=4 value="0.2"></td>
+		</tr>
+
+		<tr>
+ 		 	<td>\(q \in [0,1)\):</td>
+			<td style="padding-left: 15px;"><input type="text" id="q" size=4 value="0.3"></td>
+		</tr>
+
+		<tr>
+ 		 	<td>\(t\) (try order 1000):</td>
+			<td style="padding-left: 15px;"><input type="text" id="t" size=4 value="1000"></td>
+		</tr>
+
+		<tr>
+ 		 	<td>domain (order 1):</td>
+			<td style="padding-left: 15px;"><input type="text" id="the_range" size=4 value="2"></td>
+		</tr>
+
+		<tr align="center">
+			<td align="center" colspan=2><button type="submit">Simulate</button></td>
+		</tr>
+	</table>
+</form>
+	
+
+	<div id="plot" style="top:0px; margin-top:1cm;">
+	</div>
+
+</div>
+	 <script>
+
+		function ASEP_Z(N, t, q)
+		{
+			var state = [];
+
+			for (var i = 1; i <= N; i++) {
+			   state.push(N-i+1);
+			}
+
+			var the_start=0;
+			var prob = q/(1+q);
+			var Infty=N+1;
+
+			var num_swaps = poisson(N*t*(1+q)); // number of swaps that the N particles we are tracking will attempt by time t
+			var k=1;
+
+			while (k <= num_swaps){
+				var M = state.length;
+				var pos = discreteUniform(0,M+1); // picks a random position from the current positions in the state as well as the two boundary locations
+				var L = 0;
+				if (Math.random() <= prob)
+				{	
+					L = 1;
+				}
+
+				var R = 1-L;
+
+
+				// We increment the swap count k only if the particle picked is one of the original N ones with color in [1,N].
+				// The swap attempt still happens even otherwise, of course.
+				if (0 < pos && pos < M+1 && 0 < state[pos-1] && state[pos-1] < Infty){
+					k += 1;
+				}
+				
+				if (R && 0 < pos && pos < M){ // right swap attempt from bulk to bulk
+					if (state[pos-1] > state[pos]){
+						[state[pos-1], state[pos]] = [state[pos], state[pos-1]];
+					}
+				}
+				else if (L && 1 < pos && pos < M+1){ // left swap attempt from bulk to bulk or boundary
+					if (state[pos-1] > state[pos-2]){
+						[state[pos-1], state[pos-2]] = [state[pos-2], state[pos-1]];
+					}
+				}
+				else if (R && pos==0){ // right swap attempt from boundary
+					state.unshift(state[0]);
+					state[1] = Infty;
+					the_start = the_start-1;
+				}
+				else if (R && pos == M){ //right swap attempt to boundary
+					state.push(state[M-1]);
+					state[M-1] = 0;
+				}
+			}
+
+			return [state, the_start];
+		}
+
+
+		// ASEP_sheet calls ASEP_state to obtain the state at continuous time t and computes the height function of
+		// the state in a neighborhood of alpha in (-1,1) in the rarefaction fan. It then affinely shifts, recenters, and 
+		// scales the height function and plots it using the formulas in Section 2 (\epsilon is calculated from t). the_range parametrizes the domain on which the rescaled height_func is
+		// plotted, e.g., the_range = 3 means the plot will be on [-3,3].
+
+
+		function ASEP_sheet(alpha, q, the_range, t)
+		{
+			var mu = ((1-alpha)**2)/4;
+			var sigma_inv = 2*((1-(alpha**2))**(-2/3));
+			var beta = 2*((1-(alpha**2))**(1/3));
+			var gamma = 1-q;
+
+			var mu_prime = -(1-alpha)/2;
+
+			var eps = 2/(gamma*t);
+			var eps_inv = eps**(-1);
+			var eps_third = eps**(1/3);
+			console.log(eps_inv, eps_third)
+
+			var N = 5*Math.floor(Math.abs(2*alpha*eps_inv) + beta*the_range*(eps**(-2/3))); // 5 is an arbitrary choice so that the error in ASEP_Z will be small
+			[state, the_start] = ASEP_Z(N, t, q);
+
+			var cropsize = Math.floor(beta*(eps**(-2/3))*the_range);
+			var height_func = Array(2*cropsize+1).fill().map(() => Array(2*cropsize+1).fill(0));
+			var M = state.length;
+			var N_orig = Math.floor(N/2);
+
+			for (i=0;  i <= 2*cropsize; i++){
+				for (j=0; j<= 2*cropsize; j++){
+					height_func[i][j] = state.slice(N_orig -the_start + Math.floor(2*alpha*eps_inv) - cropsize + j-1).filter(x => x >= N_orig+cropsize-i).length;
+				}
+			}
+
+
+			var the_sheet = Array(2*cropsize+1).fill().map(() => Array(2*cropsize+1).fill(0));
+			var axisrange = [];
+			var increment = 2*the_range/(2*cropsize);
+
+			for (i=0; i<= 2*cropsize; i++)
+			{
+				axisrange.push(-the_range + i*increment);
+			}
+			// var xrange = range(-the_range, the_range,2*cropsize+1)
+			// var yrange = range(-the_range, the_range,2*cropsize+1);
+
+			for (i=-cropsize; i<= cropsize; i++){
+				for (j=-cropsize; j<= cropsize; j++){
+					the_sheet[cropsize+i][cropsize+j] = sigma_inv*eps_third*(mu*2*eps_inv + mu_prime*(j-i) - height_func[cropsize+i][cropsize+j]);
+				}
+			}
+
+			var layout = {
+						  autosize: true,
+						  width: 715,
+						  height: 715,
+						  margin: {
+						    l: 50,
+						    r: 50,
+						    b: 65,
+						    t: 10,
+						  },
+						};
+
+			var data = [{
+	       z: the_sheet,
+	       x: axisrange,
+	       y: axisrange,
+	       colorscale: 'Portland',
+	       type: 'surface'
+	    }];
+
+			Plotly.newPlot('plot', data, layout);
+
+			// plt = surface(xrange, yrange, ASEP_sheet, camera=(120,20), seriescolor=cgrad(:heat), dpi=300, legend = false, grid=false, size=(1000,1000), tickfontsize=14, background_color_outside=:white);
+
+		}
+	</script>
+  <script src="//static.getclicky.com/js" type="text/javascript"></script>
+  <script src="info.js" type="text/javascript"></script>
+</body>
+</html>
